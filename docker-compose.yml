@@ -1,0 +1,15 @@
+
+version: "3.4"
+services:
+ vite_docker:
+   image: node:alpine
+   container_name: crm-frontend
+   entrypoint: /bin/sh
+   ports:
+     - 83:83
+   working_dir: /srv/app
+   volumes:
+     - type: bind
+       source: ./
+       target: /srv/app
+   tty: true

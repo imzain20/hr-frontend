@@ -1,0 +1,11 @@
+.breadcrumb-item + .breadcrumb-item::before {
+	content: "›" !important;
+	color: #bdbdbd !important;
+	padding: 0 12px !important;
+    font-size: 1.5em; /* Adjust the font size as needed */
+    vertical-align: middle; /* Vertically align the pseudo-element */
+    line-height: -1; /* Reset the line height */
+}
+li.breadcrumb-item > a {
+	text-decoration: none;
+}

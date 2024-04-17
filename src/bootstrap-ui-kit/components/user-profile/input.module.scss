@@ -1,0 +1,164 @@
+@import "./variables.scss";
+
+.container {
+  width: 100%;
+
+  .group {
+    position: relative;
+    padding-bottom: 24px;
+    @media only screen and (max-width: $breakpoint-mobile) {
+      padding-bottom: 16px;
+    }
+    .rowContainer {
+      display: flex;
+      flex-direction: row;
+      .label {
+        position: absolute;
+        pointer-events: none;
+        //left: 0.5em;
+        top: 0.5em;
+        transition: 0.2s ease all;
+        color: #4f4f4f;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.1px;
+        word-wrap: break-word;
+        font-family: "Roboto";
+        @media only screen and (max-width: $breakpoint-mobile) {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.1px;
+        }
+      }
+
+      .image {
+        margin-left: -22px; /* Add spacing between input and icon */
+        margin-top: 8px;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          margin-left: -18px; /* Add spacing between input and icon */
+          //margin-top: 10px;
+        }
+        cursor: pointer;
+        order: 2;
+        .icon {
+          width: 18px;
+          height: 18px;
+          @media only screen and (max-width: $breakpoint-mobile) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .inputSuccess {
+        border-bottom: 1px solid #63daa0;
+      }
+      .inputError {
+        border-bottom: 1px solid #fc5959;
+      }
+      .input {
+        &[type="password"]::-ms-reveal,
+        &[type="password"]::-ms-clear {
+          display: none;
+        }
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        background-color: white;
+        padding: 5px 24px;
+        //line-height: 1.5em;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        border: 0;
+        display: block;
+        width: 100%;
+        //margin-top: 2em;
+        border-bottom: 1px solid #bdbdbd;
+        //background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 98%, #BBDCFF 4%);
+        background-position: -100em 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        font-family: "Roboto";
+        padding-left: 0em;
+        letter-spacing: 0.1px;
+        transition: 0.3s cubic-bezier(0.64, 0.09, 0.08, 1) all;
+        &::placeholder {
+          color: transparent;
+          opacity: 0;
+        }
+        &:focus,
+        &.inputWithValue {
+          background-position: 0 0;
+          border-bottom: 1px solid #bbdcff;
+          font-family: "Roboto";
+          ~ label {
+            color: #4f4f4f;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0.1px;
+            top: -1.3em;
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+        &:focus::placeholder,
+        &.inputWithValue::placeholder {
+          color: #bdbdbd;
+          opacity: 1;
+        }
+        @media only screen and (max-width: $breakpoint-mobile) {
+          padding: 0.5em 1.5em;
+          padding-left: 0em;
+          font-size: 12px;
+          font-family: "Roboto";
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+
+    .passwordCriteria {
+      position: absolute;
+      left: 0;
+      margin-top: 4px;
+      color: #bdbdbd;
+      font-size: 10px;
+      font-family: "Roboto";
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 0.1px;
+      word-wrap: break-word;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        font-size: 10px;
+        font-family: "Roboto";
+        font-weight: 300;
+        line-height: 12px;
+      }
+    }
+    .passwordError {
+      position: absolute;
+      left: 0;
+      margin-top: 4px;
+      color: #fc5959;
+      font-size: 10px;
+      font-family: "Roboto";
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 0.1px;
+      word-wrap: break-word;
+      @media only screen and (max-width: $breakpoint-mobile) {
+        font-size: 10px;
+        font-family: "Roboto";
+        font-weight: 300;
+        line-height: 12px;
+      }
+    }
+  }
+}

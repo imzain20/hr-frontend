@@ -1,0 +1,107 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(189, 189, 189, 1);
+  border-radius: 8px;
+  margin-inline: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 2px solid #e0e0e0;
+}
+.bodyContainer {
+  background-color: white;
+  width: 85%;
+  height: 80%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.SingleTab {
+  color: rgba(189, 189, 189, 1);
+  padding: 8px 20px;
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+.description {
+  padding-bottom: 24px;
+}
+.activeTab {
+  color: #228dff;
+  padding: 8px 20px;
+  border-bottom: 2px solid #228dff;
+  margin-bottom: -2px;
+}
+.createButton {
+  margin-top: 20px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-Gray-04, #228dff);
+  background: var(--Gray-White, #228dff);
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.customTable {
+  width: 100%;
+}
+.Head {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inputStyle {
+  color: var(--Gray-Black, #333) !important;
+  font-family: Roboto !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  letter-spacing: 0.1px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--Gray-Gray-03, #bdbdbd) !important;
+  background: var(--Gray-White, #fff);
+  min-height: 38px !important;
+}
+
+.tableDataText {
+  padding-inline: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.headerText {
+  color: rgba(189, 189, 189, 1);
+  padding: 8px 20px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  text-align: left;
+}
+.mainContentCreateModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 64px 48px 48px 48px;
+}

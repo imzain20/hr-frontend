@@ -1,0 +1,16 @@
+.input::placeholder {
+	padding-left: 1.5rem !important;
+}
+.searchIcon {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+.navbar.navbar-expand-lg {
+	padding-left: 6rem !important;
+}
+@media (max-width: 768) {
+	.navbar.navbar-expand-lg {
+		padding-left: 3rem !important;
+	}
+}

@@ -1,0 +1,59 @@
+.border {
+	border-bottom: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+
+button {
+	color: #bdbdbd;
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	/* 150% */
+	letter-spacing: 0.1px;
+}
+
+a.active button {
+	border-bottom: 2px solid #228dff;
+	color: #228dff;
+}
+
+.btn-outline-primary {
+	color: #228dff;
+
+	/* Body/16 Regular */
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	/* 150% */
+	letter-spacing: 0.1px;
+}
+
+.form-check-input {
+	width: 20px;
+	height: 20px;
+}
+
+.tabs {
+	background-color: #f5f5f5;
+	width: 95%;
+	display: flex;
+
+	@media (max-width: 768px) {
+		width: 100vw;
+		margin-top: -10px;
+		overflow-x: auto;
+	}
+}
+
+.columnName {
+	color: #bdbdbd;
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0.1px;
+}

@@ -1,0 +1,20 @@
+.usersidebar {
+  z-index: 1;
+  background-color: white;
+  width: 300px;
+  border-right: 1px solid #e0e0e0;
+  /* height: 72vh; */
+}
+.link {
+  color: #bdbdbd;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 160% */
+  letter-spacing: 0.1px;
+  width: 100%;
+  display: inline-block;
+  padding-left: 1rem;
+  padding: 24px 20px;
+}
