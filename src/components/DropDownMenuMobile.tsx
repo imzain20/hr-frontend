@@ -11,6 +11,7 @@ interface Props {
   secondaryAvatar: string;
   userState: any;
   businesses: Business[];
+  openModal: () => void;
   handleSignout: () => void;
 }
 
@@ -19,6 +20,7 @@ const DropDownMenuMobile = ({
   secondaryAvatar,
   userState,
   businesses,
+  openModal,
   handleSignout,
 }: Props) => {
   const navigate = useNavigate();
@@ -91,6 +93,19 @@ const DropDownMenuMobile = ({
               </label>
             </div>
           ))}
+          {userState?.business?.ownerId && (
+            <button
+              className="d-block mt-3"
+              style={{
+                background: "transparent",
+                color: "#228DFF",
+                fontSize: "16px",
+              }}
+              onClick={openModal}
+            >
+              <span className="me-2 ms-1">+</span> Add business
+            </button>
+          )}
         </li>
         <li className="mt-2">
           <hr

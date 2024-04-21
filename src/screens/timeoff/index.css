@@ -1,0 +1,26 @@
+.rbc-header {
+    background: rgb(255, 255, 255);
+    color: #828282;
+   font-weight: 300;
+   font-size: 15px;
+   font-family: Roboto;
+   padding-top: 0.5vw;
+   padding-bottom: 0.5vw;
+  }
+  
+  .rbc-event {
+    padding: 0 !important;
+    font-size: 16px;
+  }
+.rbc-month-view{
+    border: none !important;
+}
+  
+  .rbc-event-label {
+    display: none !important;
+  }
+  
+  .rbc-events-container {
+    /* background-color: blueviolet !important; */
+  }
+  

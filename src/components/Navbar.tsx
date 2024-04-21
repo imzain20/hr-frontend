@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import SideBarBSMobile from "../bootstrap-ui-kit/components/UI/Sidebar/SideBarBSMobile";
 import SearchIcon from "../assets/svg/Navbar Icons/Blue search.svg";
 import HelpIcon from "../assets/svg/Navbar Icons/Help center.svg";
 import NotificationIcon from "../assets/svg/Navbar Icons/Notification.svg";
 import AvatarIcon from "../assets/svg/Navbar Icons/Profile picture.svg";
 import PlusIcon from "../assets/svg/Navbar Icons/White plus.svg";
-import { actions, useUserState } from "../redux/userSlice";
+//import CreateBusiness from "../screens/user-profile/CreateBusiness";
 import BreadCrumbs from "./BreadCrumbs";
 import DropDownMenuMobile from "./DropDownMenuMobile";
 import DropDownMenu from "./DropDownMenu";
@@ -19,33 +20,40 @@ interface Business {
 }
 
 const Navbar = () => {
-  const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [businesses, setBusinesses] = useState<Business[]>([]); // Provide type information for useState
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://backend-b.cinqd.com/setup/get-my-businesses/${userState.user?._id}`,
-        {
-          headers: {
-            "auth-token": userState.token,
-          },
-        }
-      );
-      setBusinesses(response.data.data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-    }
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://backend-b.cinqd.com/setup/get-my-businesses/${userState.user?._id}`,
+  //         {
+  //           headers: {
+  //             "auth-token": userState.token,
+  //           },
+  //         }
+  //       );
+  //       setBusinesses(response.data.data);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   useEffect(() => {
+  //     fetchData();
+  //   }, []);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const userState = useUserState();
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const handleSignout = () => {
-    dispatch(actions.resetState());
+    //	dispatch(actions.resetState());
     navigate("/auth/signin-with-email", { relative: "route" });
   };
   return (
@@ -54,7 +62,7 @@ const Navbar = () => {
         className="navbar navbar-expand-md bg-white py-2 ps-4 ps-md-0 pe-5 z-1"
         style={{ height: "72px" }}
       >
-        <Link className="navbar-brand" to={"/builder"}>
+        <Link className="navbar-brand" to={"/business/business-profile"}>
           <img
             src={
               "https://media.licdn.com/dms/image/C4E0BAQEZn2nwHP2xMQ/company-logo_200_200/0/1678898035938?e=2147483647&v=beta&t=L8D37J-xaL1_5obEVghhUdwQuiMfJbEEYruLhr0WdDE"
@@ -130,8 +138,8 @@ const Navbar = () => {
                 <button
                   style={{
                     borderRadius: "8px",
-                    border: "unset",
                     background: "transparent",
+                    border: "0px",
                   }}
                 >
                   <img
@@ -159,21 +167,24 @@ const Navbar = () => {
                   businesses={businesses}
                   handleSignout={handleSignout}
                   mainAvatar={AvatarIcon}
+                  openModal={openModal}
                   secondaryAvatar={AvatarIcon}
-                  userState={userState}
+                  userState={undefined}
                 />
                 <DropDownMenuMobile
                   businesses={businesses}
                   handleSignout={handleSignout}
                   mainAvatar={AvatarIcon}
+                  openModal={openModal}
                   secondaryAvatar={AvatarIcon}
-                  userState={userState}
+                  userState={undefined}
                 />
               </div>
               <hr
                 className="dropdown-divider d-block d-md-none mt-3"
                 style={{ background: "#E0E0E0", height: "1px" }}
               />
+              <SideBarBSMobile />
             </ul>
           </div>
         </div>

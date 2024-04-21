@@ -20,10 +20,10 @@ const GlobalScreen: React.FC = () => {
 
             <div
               className="d-flex overflow-y-hidden"
-              style={{ height: "93vh" }}
+              style={{ height: "100vh" }}
             >
               <Menu />
-              <div className="flex-grow-1 pt-0 ps-0 ps-md-3 overflow-y-auto overflow-x-auto">
+              <div className="flex-grow-1 pt-0 ps-0 ps-md-3 overflow-y-scroll overflow-x-scroll">
                 <Outlet />
               </div>
             </div>

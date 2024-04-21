@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useUserStateActions } from "../redux/userSlice";
+//import { useUserStateActions } from "../redux/userSlice";
 import { useState } from "react";
 interface Business {
   _id: string;
@@ -12,6 +12,7 @@ interface Props {
   secondaryAvatar: string;
   userState: any;
   businesses: Business[];
+  openModal: () => void;
   handleSignout: () => void;
 }
 
@@ -20,10 +21,11 @@ const DropDownMenu = ({
   secondaryAvatar,
   userState,
   businesses,
+  openModal,
   handleSignout,
 }: Props) => {
   const navigate = useNavigate();
-  const userStateData = useUserStateActions();
+  //const userStateData = useUserStateActions();
   const [businessId, setBusinessId] = useState<string>();
   console.log(businessId, "selected business id");
   return (
@@ -35,8 +37,8 @@ const DropDownMenu = ({
         data-bs-toggle="dropdown"
         className="dropdown-toggle"
         role="button"
-        width={50}
-        height={50}
+        width={40}
+        height={40}
       />
 
       <ul
@@ -79,7 +81,7 @@ const DropDownMenu = ({
               className="form-check"
               key={business._id}
               onClick={() => {
-                userStateData.setBusiness(business);
+                //userStateData.setBusiness(business);
                 navigate("/business/business-profile");
               }}
             >
@@ -105,6 +107,7 @@ const DropDownMenu = ({
                 color: "#228DFF",
                 fontSize: "16px",
               }}
+              onClick={openModal}
             >
               <span className="me-2 ms-1">+</span> Add business
             </button>
